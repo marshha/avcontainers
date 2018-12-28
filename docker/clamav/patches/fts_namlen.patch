@@ -1,0 +1,15 @@
+--- clamd/fts.c.orig
++++ clamd/fts.c
+@@ -74,10 +74,12 @@
+ #define FTSENTRY FTSENT
+ #define INO_T ino_t
+ #define STAT stat
+ #define LSTAT lstat
+ 
++#define _D_EXACT_NAMLEN(d) (strlen ((d)->d_name))
++
+ #define internal_function
+ # define __set_errno(val) (errno = (val))
+ 
+ /* Largest alignment size needed, minus one.
+    Usually long double is the worst case.  */
